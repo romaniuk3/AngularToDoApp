@@ -9,6 +9,7 @@ import { Todo } from 'src/app/models/Todo';
 export class TodosComponent implements OnInit {
 
   todos?:Todo[];
+  completedTodos?:Todo[];
 
   inputTodo:string = "";
 
@@ -50,5 +51,9 @@ export class TodosComponent implements OnInit {
       completed: false
     });
     this.inputTodo = '';
+  }
+
+  showCompleted() {
+    this.completedTodos = this.todos?.filter((el) => el.completed === true);
   }
 }

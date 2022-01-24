@@ -15,4 +15,8 @@
         <button class="delete" (click)="removeTodo(i)">Remove</button>
     </div>
     <button (click)="showCompleted()" class="todo-submit btn-completed">Show Completed</button>
+    <div *ngFor="let compl of completedTodos; let i = index;" class="todo">
+        <div class="id">{{i}}</div>
+        <div class="content">{{compl.content}}</div>
+    </div>
 </div>
